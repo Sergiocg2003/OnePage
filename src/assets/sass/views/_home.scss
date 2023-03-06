@@ -1,0 +1,356 @@
+/*Aqui encontramos el css referentes al main del body junto con su variantes para móvil de la pagina principal*/
+
+.Principal{
+    height: 77vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-fondo;
+    overflow-y: scroll;
+
+    &__seccion{
+        text-align: center;
+        margin: 30px 200px 30px 200px;
+        font-family: $fuente;
+        &__titular{
+            color: $color-primario;
+        }
+        p{
+            margin: 20px 0 20px 0;
+            font-size: 16px;
+            font-family: $fuente;
+        }
+
+        &__contenedor{
+            display: flex;
+            background-color: $color-primario;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            width: 70%;
+            max-width: 120em;
+            padding: 1em;
+            border-radius: 25;
+            box-shadow: 0 0  0 2px $color-primario,
+            0.3em 0.3em 1em rgba(0,0,0,0.3);
+            
+            &__ul{
+                width: 100%;
+                padding: 1em;
+                list-style: none;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                align-items: center;
+
+                &__li{
+                    padding: 1em;
+                    background-color: white;
+                    margin: 0 1em 0 0;
+                    border-radius: 25;
+                    transition: all .5s ease;
+                    box-shadow: 0 0  0 2px white,
+                    0.3em 0.3em 1em rgba(0,0,0,0.3);
+                }
+                &__li.activo{
+                    background-color: $color-primario;
+                    color: $color-letra;
+                    padding: 1em;
+                    margin: 0 1em 0 0;
+                }
+            }
+
+            &__subcontenedor{
+                position: relative;
+                width: 100%;
+                text-align: center;
+                border-radius: 25;
+                background-color: white;
+                min-height: 50vh;
+                box-shadow: 0 0  0 2px white,
+                0.3em 0.3em 1em rgba(0,0,0,0.3);
+
+                &__bloque{
+                    padding: 1em;
+                    margin: 1em;
+                    top: 1em;
+                    display: none;
+                    transition: all .5s ease;
+                    &__video{
+                        width: 100%;
+                    }
+                }
+                &__bloque.activo{
+                    padding: 1em;
+                    margin: 1em;
+                    display: block;
+                }
+            }
+        }
+        &__acordeon{
+            width: 70%;
+            max-width: 120em;
+            background-color: $color-primario;
+            padding: 2em;
+            margin: 0 auto;
+            border-radius: 25;
+            box-shadow: 0 0  0 2px $color-primario,
+            0.3em 0.3em 1em rgba(0,0,0,0.3);
+            &__bloque{
+                background-color: white;
+                margin: 0 0 1em;
+                padding: 1em;
+                border-radius: 25;
+                box-shadow: 0 0  0 2px white,
+                0.3em 0.3em 1em rgba(0,0,0,0.3);
+                &__titulo{
+                    color: $color-letra;
+                    background-color: $color-primario;
+                    margin: 0 0 1em;
+                    padding: 1em;
+                    border-radius: 25;
+                    box-shadow: 0 0  0 2px $color-primario,
+                    0.3em 0.3em 1em rgba(0,0,0,0.3);
+                }
+                &__contenido{
+                    display: none;
+                    padding: 1em;
+                    border-radius: 25;
+                    transition: all .5s ease;
+                    audio{
+                        width: 100%;
+                    }
+                }
+                &__contenido.activo{
+                    display: block;
+                }
+            }
+        }
+        &__personaje{
+            width: 100%;
+            border-radius: 25;
+            text-align: center;
+            padding: 1em;
+            margin: 0 0 1em;
+            &__imagen{
+                width: 20%;
+            }
+        }
+        &__carrusel{
+            width: 70%;            ;
+            max-width: 120em;
+            margin: 0 auto;
+            padding: 2em;
+            border-radius: 25;
+            overflow: hidden;
+            background-color: $color-primario;
+            box-shadow: 0 0  0 2px $color-primario,
+                    0.3em 0.3em 1em rgba(0,0,0,0.3);
+            &__grande{
+                width: 300%;
+                padding: 2em;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+                align-items: center;
+                transition: all .5s ease;
+                background-color: $color-primario;
+                &__img{
+                    width: calc(100% / 3 - 3em);
+                    min-height: 10vh;
+                }
+            }
+            &__puntos{
+                width: 100%;
+                padding: .4em;
+                list-style: none;
+                border-radius: 25;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                align-items: center;
+                background-color: $color-primario;
+                &__punto{
+                    width: 2em;
+                    height: 2em;
+                    margin: 1em 1em 0;
+                    border-radius: 50%;
+                    background-color: white;
+                    box-shadow: 0 0  0 2px white,
+                    0.3em 0.3em 1em rgba(0,0,0,0.3);
+                }
+                &__punto.activo{
+                    background-color: $color-primario;
+                    padding: 1em;
+                    margin: 1em 1em 0;
+                }
+            }
+        }
+    }
+}
+
+/*Esta es la media query que hacemos para el css de la versión de móvil*/
+@media (max-width:698px) {
+    .Principal{
+        height: 78vh;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+        
+        &__seccion{
+            width: 100%;
+            margin: 30px;
+    
+            &__contenedor{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                max-width: 100em;
+                padding: 1em;
+                
+                &__ul{
+                    width: 100%;
+                    list-style: none;
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: center;
+                    align-items: center;
+    
+                    &__li{
+                        width: 80px;
+                        padding: 10px;
+                        transition: all .5s ease;
+                    }
+                    &__li.activo{
+                        background-color: $color-primario;
+                        padding: 10px;
+                    }
+                }
+    
+                &__subcontenedor{
+                    position: relative;
+                    width: 100%;
+                    text-align: center;
+                    min-height: 10vh;
+    
+                    &__bloque{
+                        top: 1em;
+                        display: none;
+                        transition: all .5s ease;
+                        &__video{
+                            width: 100%;
+                        }
+                    }
+                    &__bloque.activo{
+                        padding: 1em;
+                        margin: 1em;
+                        display: block;
+                    }
+                }
+            }
+            &__acordeon{
+                width: 100%;
+                background-color: $color-primario;
+                padding: 1em;
+                margin: 0 auto;
+                border-radius: 25;
+                box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
+                0 0  0 2px $color-primario,
+                0.3em 0.3em 1em rgba(0,0,0,0.3);
+                &__bloque{
+                    background-color: white;
+                    margin: 0 0 1em;
+                    padding: 1em;
+                    border-radius: 25;
+                    box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
+                    0 0  0 2px white,
+                    0.3em 0.3em 1em rgba(0,0,0,0.3);
+                    &__titulo{
+                        background-color: $color-primario;
+                        margin: 0 0 1em;
+                        padding: 1em;
+                        border-radius: 25;
+                        box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
+                        0 0  0 2px $color-primario,
+                        0.3em 0.3em 1em rgba(0,0,0,0.3);
+                    }
+                    &__contenido{
+                        display: none;
+                        padding: 1em;
+                        border-radius: 25;
+                        transition: all .5s ease;
+                    }
+                    &__contenido.activo{
+                        display: block;
+                    }
+                }
+            }
+            &__personaje{
+                width: 100%;
+                border-radius: 25;
+                text-align: center;
+                padding: 1em;
+                margin: 0 0 1em;
+                &__imagen{
+                    width: 50%;
+                }
+            }
+            &__carrusel{
+                width: 100%;
+                max-width: 120em;
+                margin: 0 auto;
+                padding: 2em;
+                border-radius: 25;
+                background-color: $color-primario;
+                box-shadow: 0 0  0 2px $color-primario,
+                        0.3em 0.3em 1em rgba(0,0,0,0.3);
+                &__grande{
+                    width: 300%;
+                    padding: 2em;
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: space-between;
+                    align-items: center;
+                    transition: all .5s ease;
+                    background-color: $color-primario;
+                    &__img{
+                        width: calc(100% / 3 - 3em);
+                        min-height: 10vh;
+                    }
+                }
+                &__puntos{
+                    width: 100%;
+                    padding: .4em;
+                    list-style: none;
+                    border-radius: 25;
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: $color-primario;
+                    &__punto{
+                        width: 2em;
+                        height: 2em;
+                        margin: 1em 1em 0;
+                        border-radius: 50%;
+                        background-color: white;
+                        box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
+                        0 0  0 2px white,
+                        0.3em 0.3em 1em rgba(0,0,0,0.3);
+                    }
+                    &__punto.activo{
+                        background-color: $color-primario;
+                        padding: 1em;
+                        margin: 1em 1em 0;
+                    }
+                }
+            }
+        }
+    }
+}
